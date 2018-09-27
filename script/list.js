@@ -19,7 +19,7 @@ List=function(){
 	this.arr;
 	this.max=4;
 	this.html="";
-	this.Regs=JSON.parse(fso.read("regs.reg"));
+	//this.Regs=JSON.parse(fso.read("regs.reg"));
 	this.reg=[];	
 }
 List.prototype.ini=function(){

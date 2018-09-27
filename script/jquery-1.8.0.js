@@ -11,7 +11,6 @@
  *
  * Date: Thu Aug 09 2012 16:24:48 GMT-0400 (Eastern Daylight Time)
  */
- alert();
 (function( window, undefined ) {
 var
 	// A central reference to the root jQuery(document)
@@ -9226,4 +9225,3 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 }
 
 })( window );
-alert();
