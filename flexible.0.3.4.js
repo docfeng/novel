@@ -3,14 +3,22 @@
   var b=document.createElement("style");
   if(document.getElementsByTagName("head")[0].appendChild(b),b.styleSheet)b.styleSheet.disabled||(b.styleSheet.cssText=a);else try{b.innerHTML=a}catch(c){b.innerText=a}
 }();
-!function(a,b){
+!function(){
+  var a=window;
+  var b=window.lib||(window.lib={});
+  var k=b.flexible||(b.flexible={});
   function c(){
     var b=f.getBoundingClientRect().width;
     b/i>540&&(b=540*i);
     var c=b/10;
     f.style.fontSize=c+"px",k.rem=a.rem=c
   }
-  var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});
+  var d;
+  var e=window.document;
+  var f=window.document.documentElement;
+  var g=window.document.querySelector('meta[name="viewport"]');
+  var h=window.document.querySelector('meta[name="flexible"]')
+  var i=0,j=0;
   if(g){
     console.warn("将根据已有的meta标签来设置缩放比例");
     var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
@@ -23,7 +31,7 @@
     }
   }
   if(!i&&!j){
-    var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i
+    var p=(window.navigator.appVersion.match(/android/gi),window.navigator.appVersion.match(/iphone/gi)),q=window.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i
   }
   if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);
   else{
@@ -31,14 +39,14 @@
     r.appendChild(g);
     e.write(r.innerHTML);
   }
-  a.addEventListener("resize",
+  window.addEventListener("resize",
     function(){
       clearTimeout(d);
       d=setTimeout(c,300);
     },
     !1
   );
-  a.addEventListener("pageshow",
+  window.addEventListener("pageshow",
     function(a){
       a.persisted&&(clearTimeout(d),d=setTimeout(c,300))
     },
@@ -56,7 +64,7 @@
     var b=parseFloat(a)/this.rem;
     return "string"==typeof a&&a.match(/px$/)&&(b+="rem"),b
   }
-}(window,window.lib||(window.lib={}));
+}();
 
 
 

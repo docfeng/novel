@@ -1,7 +1,9 @@
 html,body{
   height:100%;
+  width:100%
   padding:0;
   margin:0;
+	font-size: large;
 }
 .myhead,input{
   height:24px;
@@ -30,24 +32,24 @@ table h1,table h2,table h3,table h4,table h5,h6{
   font-weight:normal;
 }
 table h1{
-    font-size:16px;
+    font-size:1rem;
     background-color:#778899;
 }
 
 table h2{
-    font-size:8px;
+    font-size:0.8rem;
     background-color:#A0B4CE;
 }
 table h3{
-    font-size:4px;
+    font-size:0.4rem;
     background-color:#B0C4DE;
 }
 table h4{
-    font-size:0.1px;
+    font-size:0.8rem;
     background-color:#A0B4CE;
 }
 table h5{
-    font-size:0.5px;
+    font-size:0.4rem;
     display:none;
     //background-color:#B0C4DE;
 }
@@ -154,6 +156,7 @@ td:hover h1,td:hover h2,td:hover h3,td:hover h4,td:hover h5,h6{
 
 .menu > div > form{
   height:100%;
+  //overflow-y:scroll;
 }
 textarea{
   width:100%;
@@ -182,32 +185,3 @@ textarea.e{
 #novel_view.show{
   display: block;
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

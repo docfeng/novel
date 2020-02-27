@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package version="2.0" unique-identifier="PrimaryID" xmlns="http://www.idpf.org/2007/opf">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+<dc:title>实用内科学第13版</dc:title>
+<dc:identifier opf:scheme="ISBN"></dc:identifier>
+<dc:language>zh-CN</dc:language>
+<dc:creator>侠客霸王</dc:creator>
+<dc:publisher>epub掌上书苑</dc:publisher>
+<dc:description></dc:description>
+<dc:coverage></dc:coverage>
+<dc:source>http://www.cnepub.com</dc:source>
+<dc:date>2013-04-04</dc:date>
+<dc:rights>本电子书由epubBuilder制作生成，欢迎访问http://www.cnepub.com分享交流海量电子书。
+epubBuilder仅供交流使用，未经授权，不得用于商业用途。</dc:rights>
+<dc:subject></dc:subject>
+<dc:contributor></dc:contributor>
+<dc:type>[type]</dc:type>
+<dc:format></dc:format>
+<dc:relation></dc:relation>
+<dc:builder>epubBuilder</dc:builder>
+<dc:builder_version>3.5.02.24</dc:builder_version>
+</metadata>
+<manifest>
+<item id="ncx"  href="fb.ncx" media-type="application/x-dtbncx+xml"/>
+<item id="css" href="css/main.css" media-type="text/css"/>
+<item id="main-css" href="css/main.css" media-type="text/css"/>
+<item id="coverpage"  href="coverpage.html"  media-type="application/xhtml+xml"/>
+包含文件
+
+
+</manifest>
+	
+<spine toc="ncx">
+	
+<-- <itemref idref="coverpage" linear="yes"/>-->
+逻辑目录
+
+</spine>
+<guide>
+<reference type="cover" title="封面"  href="coverpage.html"/>
+
+</guide>
+</package>
+
+
+

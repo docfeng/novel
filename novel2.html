@@ -4,14 +4,17 @@
 	<meta charset="utf-8">
 	<meta content="telephone=no,email=no" name="format-detection">
 	<script src="flexible.0.3.4.js"></script>
+	<script type="text/javascript" src="script/base.js"></script>
+	<script type="text/javascript" src="script/novel2.js"></script>
+	<script src="script/msg.js"></script>
 	<script> window. channelID = '200001'; </script>
 	<link href="https://s.zhulang.com/images/zl-logo114.png" rel="apple-touch-icon-precomposed">
 
-	<title>第010章 夜袭,帝国的晨辉最新章节全文阅读-逐浪手机小说网-手机版</title>
+	<title>阅读器</title>
 	<meta name="keywords" content="帝国的晨辉,第010章 夜袭,逐浪手机版,在线阅读" />
-    <meta name="description" content="帝国的晨辉最新章节第010章 夜袭 逐浪网在线阅读。" />
+ <meta name="description" content="帝国的晨辉最新章节第010章 夜袭 逐浪网在线阅读。" />
 
-
+<link rel="stylesheet" href="css/msg.css" type="text/css">
 <link rel="stylesheet" href="https://s.zhulang.com/wap/pub/v2/style/read-3873a62e78.css" type="text/css">
 <style type="text/css">
 	.app-bar {height: 1.4rem;background-color: transparent;padding:0 0;}
@@ -84,17 +87,19 @@
 </style>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-  if(novel.index<0)novel.index=0;
-  window.page(parseInt(novel.index));
+//初始化
+window.addEventListener("load",async function(){
+  window.page(novel.index1);
+  setTimeout(function(){
+    window.section(novel.index2);
+  },200);
+  //点击显示目录
   document.getElementById("idx-zd").onclick = function() {
-        // 目录跳转
-        alert($("#idx-zd").html("ggggg"))
-        //window.location.href = "http://www.baidu.com";
+        novel.showlist();
         return;
   }
+},false);
   //alert($("#idx-zd").html())
-});
 </script>
 <script>
 	/*var userInfo = {
@@ -109,12 +114,12 @@ $(document).ready(function(){
 	};*/
 </script>
 </head>
-<body ontouchstart class=" fstep-5 bg-2 page-lr rd-day ">
+<body ontouchstart class=" fstep-2 bg-2 page-lr rd-day ">
   <div class="rd-cnt">
     <div class="rd-top" id="rd-top">
       <!--小说名称-->
       <span class="fl" id="page-name">第010章 夜袭</span>
-      <span class="fr free-downs"><a href="javascript:alert()">免费下载</a></span>
+      <span class="fr free-downs"><a href="javascript:ini(prompt('跳转章节'))">免费下载</a></span>
       <!--小说页码:1/4-->
       <span class="fr page-nav" id="page-nav"></span>
     </div>
@@ -133,7 +138,7 @@ $(document).ready(function(){
         <i class="icon icon-back">返回</i>
       </a>
     </div>
-
+    
     <div class="fn-btm fb-icon" id="fn-btm">
       <ul>
         <li class="night">
@@ -155,16 +160,25 @@ $(document).ready(function(){
           </div>
 				     </li>
 				     <li class="li-cfg">
-        <div>
-          <i class="icon icon-cfg"></i>
-						     <span>设置</span>
-					    </div>
+          <div>
+            <i class="icon icon-cfg"></i>
+						       <span>设置</span>
+					      </div>
 				     </li>
 			    </ul>
     </div>
     <!--设置界面-->
     <div class="cfg-pnl" id="cfg-pnl">
       <ul>
+        <li class="cfg-font" id="cfg-control">
+          <label>控制</label>
+          <div>
+            <menu>
+            <menuitem class="fs-add" onclick="window.uppage()">上一章</menuitem>
+            <menuitem class="fs-rdu" onclick="window.next()">下一章</menuitem>
+            </menu>
+          </div>
+        </li>
         <li class="cfg-font" id="cfg-font">
           <label>字体</label>
           <div>
@@ -231,13 +245,26 @@ $(document).ready(function(){
     <!--end of .tap-hdl-->
   <div class="idx-bg"></div>
   <div class="idx-cnt" id="idx-cnt">
-    <div class="idx-hdl" id="idx-hdl"></div>
+    <div class="idx-hdl" id="idx-hdl">
+     
+    </div>
     <!--目录-->
     <div class="idx-zd" id="idx-zd"></div>
   </div>
   <!--end of idx-cnt -->
   <div id="msg-cnt" class="msg-cnt"><span></span></div>
+
+<div class="alert">
+  <div class="alert_head">
+    <div class="alert_title">标题</div>
+    <div class="alert_close">&#8855;</div>
+  </div>
+  <div class="alert_body">
+    显示
+  </div>
+</div>
   <script>
+  /*
 (function(){
     function getLocal() {
         // ajax
@@ -274,10 +301,10 @@ $(document).ready(function(){
             storage.locals();
         }
     }
-})();
+})();*/
   </script>
   <script type="text/javascript" src="fso_jsonp.js"></script>
   <script type="text/javascript" src="geth.js"></script>
-  <script type="text/javascript" src="readpage-7d0dad00e3.js"></script>
+  <script type="text/javascript" src="script/readpage-0.1.js"></script>
 </body>
 </html>

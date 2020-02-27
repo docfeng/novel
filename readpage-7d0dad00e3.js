@@ -1,15 +1,74 @@
+/*getHTML=function(url,fun){
+  post("http://fujianyixue.win/get.php","url="+url,fun)
+}
+*/
+//getHTML("https://wap.xbiquge6.com/81_81294/index_6.html",function(a){alert(a)});
+ini=function(index){
+  //alert(url+index)
+  /*novel1=new Novel();
+  novel1.ini(url,function(){
+    novel1.getpage(parseInt(index),function(a){
+      alert(JSON.stringify(a));
+    })
+  });*/
+  var index2=prompt("页面",0);
+  window.page(parseInt(index)-1)
+  setTimeout(function(){
+    window.section(parseInt(index2));
+  },1000);
+}
 novel={}
 function keyCode(i){
   alert(i)
 }
 function nextPage(){
   //alert(next)
-  window.next();
+  
+  if(window.ds){
+    window.clearTimeout(ds);
+  }
+  var next=function(){
+    window.ds=setTimeout(function(){
+      window.next();
+    },500);
+  }
+  var uppage=function(){
+    window.ds=setTimeout(function(){
+      window.uppage();
+    },500);
+  }
+  if(!window.time1){
+    window.time1=new Date();
+    next();
+  }else{
+    var t2=new Date();
+    var t=t2-window.time1;
+    window.time1=t2
+    if(t<400){
+      window.uppage();
+      window.uppage()
+    }else{
+      window.next();
+    }
+  }
+  
 }
-novel.name="科技炼器师";
-novel.list=JSON.parse(fso.read("Shelf/"+novel.name+".json"));
-novel.index=localStorage.getItem("index")||0;
-novel.getinlinepage=function(i){
+
+novel.url=localStorage.getItem("novelurl");
+his=localStorage.getItem("his");
+if(!his){
+  his='{"name":"科技炼器师","index":[0,0]}';
+}
+his=JSON.parse(his);
+novel.index=his.index[0];
+//alert(his.name)
+//alert(novel.index)
+fso.read("Shelf/"+his.name+".json",function(txt){
+  novel.list=JSON.parse(txt);
+  //alert(txt);
+});
+
+novel.getinlinepage=function(i,Fun){
     var url=novel.list[i][0];
     var count=0;
     var fun=function(html){
@@ -27,28 +86,79 @@ novel.getinlinepage=function(i){
           alert("no "+i);
         }
       }else{
-        fso.write("Shelf/"+novel.name+"/page"+i+".txt",txt1,false);
+        if(Fun)Fun(txt1);
+        //alert(txt1)
+        try{
+          var path="Shelf/"+novel.name+"/page"+i+".txt";
+          if(!fso.fso.exist("Shelf/"+novel.name)){
+            fso.fso.createFolder("Shelf/"+novel.name)
+          }
+          fso.fso.write(path,txt1,false);
+        }catch(e){
+          alert(e)
+        }
       }
     }    		
     url.get(fun);
 }
-
-novel.getlocalpage=function(i){
-  for(var ii=1;ii<2;ii++){
+novel.getsinglepage=function(i,Fun){
+    
+    var url=novel.list[i][0];
+    var count=0;
+    var fun=function(html){
+      var txt1=html.replace(/(<br[^>]*?>[ \s]*){1,}/g,'\n');
+      txt1=txt1.replace(/&nbsp;/g,' ');
+      txt1=txt1.replace(/<script>.*?<\/script>/g,'');
+      txt1=txt1.match(/>([^<>]{100,})</);
+      txt1=txt1?txt1[1]:"";
+      txt1=txt1.replace(/\n/g,'<br />\n');
+      if(txt1==""){
+        if(count<3){
+          count++;
+          url.get(fun);
+        }else{
+          alert("no "+i);
+        }
+      }else{
+        if(Fun)Fun(txt1);
+        //alert(txt1)
+        try{
+          var path="Shelf/"+novel.name+"/page"+i+".txt";
+          if(!fso.fso.exist("Shelf/"+novel.name)){
+            fso.fso.createFolder("Shelf/"+novel.name)
+          }
+          fso.fso.write(path,txt1,false);
+        }catch(e){
+          alert(e)
+        }
+      }
+    }    		
+    url.get(fun);
+}
+novel.getlocalpage=function(i,fun){
+  /*for(var ii=1;ii<4;ii++){
     var path="Shelf/"+novel.name+"/page"+(i+ii)+".txt";
-    if(!fso.exist(path)){
+    if(!fso.fso.exist(path)){
       novel.getinlinepage(i+ii);
     }
-  }
-  var txt=fso.read("Shelf/"+novel.name+"/page"+i+".txt");
-  if(txt){
-    txt="<p>"+txt.replace(/\n/g,'</p>\n</p>')+"</p>"
-    return txt
-  }else{
-    novel.getinlinepage(i);
-    return false;
-  }
-  
+  }*/
+  fso.read(his.name+"/OPS/page"+i+".html",function(txt){
+    if(txt!="false"){
+      txt=txt.match(/<div>([\s\S]*?)<\/div>/)[1];
+      txt="<p>"+txt.replace(/<br \/>/g,'</p>\n<p>')+"</p>"
+      txt=txt.replace(/\n/g,'');
+      //alert(txt)
+      fun(txt);
+    }else{
+      /*novel.getinlinepage(i,function(txt){
+        txt="<p>"+txt.replace(/<br \/>/g,'</p>\n<p>')+"</p>"
+        txt=txt.replace(/\n/g,'');
+        //alert(txt);
+        fun(txt);
+      });*/
+      fun("<p>没有内容</p>");
+    }
+  });
 }
 
 String.prototype.get=function(fun) {  
@@ -80,7 +190,11 @@ String.prototype.get=function(fun) {
   xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   xmlHttp.send(); 
   //xmlHttp=null;
-  }
+}
+  
+  
+  
+  
 !function() {
 //10
     function ini() {
@@ -196,7 +310,8 @@ show=function(str){
         })
     }
     function l() {
-        $("#tip-bg").length || et.append('<div class="tip-bg" id="tip-bg"></div>');
+      //屏幕幕布
+        /*$("#tip-bg").length || et.append('<div class="tip-bg" id="tip-bg"></div>');
         var t = U.get(rt);
         "undefined" == t && (et.removeClass("tip-off").addClass("tip-on"), H = !0);
         var n = "ontouchstart" in document.documentElement ? "touchstart": "click";
@@ -213,7 +328,7 @@ show=function(str){
                 }),
                 H = !1
             }
-        })
+        })*/
     }
     function f() {
         ot.on("click", ".fn-div",
@@ -248,7 +363,8 @@ show=function(str){
         })
     }
     function h() {
-        $("#idx-hdl").one("click",
+        //alert("h")
+        /*$("#idx-hdl").one("click",
         function() {
             g(),
             k(),
@@ -265,9 +381,10 @@ show=function(str){
         function() {
             var t = $("#idx-cnt").find(".idx-div");
             t.toggleClass("idx-rvt")
-        })
+        })*/
     }
     function m() {
+      alert("m")
         $("#idx-cnt li a").off("touchstart touchmove touchend").on("touchstart",
         function(t) {
             lt = $(this).data("href")
@@ -390,7 +507,7 @@ show=function(str){
     }
     function y() {
         window.onbeforeunload = function() {
-            o()
+            o();
         },
         $("#cfg-pnl menuitem").on("click",
         function() {
@@ -569,45 +686,32 @@ show=function(str){
     }
     	//上一章
     function I() {
-       Y=1;
-       //var t = $("#prev-url");
-       novel.index--;
-       if(novel.index<0)novel.index=0;
-       var txt=novel.getlocalpage(novel.index);
-       localStorage.setItem("index",novel.index);
-       $("#rd-txt").html(txt);
-       $("#page-name").html(novel.list[novel.index][1]);
-       Z = (Y / q).toFixed(2);
-       A(Y, 400);
-       void S();
+       his.index[0]=his.index[0]-1;
+       window.page(his.index[0]);
     }
     	//下一章
     function E() {
-    	   Y=1;
-        //var t = $("#next-url");
-        novel.index++;
-        var txt=novel.getlocalpage(novel.index);
-        $("#rd-txt").html(txt/*+$(".ud-link").prop("outerHTML")*/);
-        $("#page-name").html(novel.list[novel.index][1]);
-        localStorage.setItem("index",novel.index);
-        Z = (Y / q).toFixed(2);
-        A(Y, 400);
-        void S();
+        his.index[0]=his.index[0]+1;
+        window.page(his.index[0]);
     }
     window.page=function(i){
        Y=1;
-       var txt=novel.getlocalpage(i);
-       localStorage.setItem("index",i);
-       $("#rd-txt").html(txt);
-       $("#page-name").html(novel.list[i][1]);		
-       Z = (Y / q).toFixed(2);
-       A(Y, 400);
-       void S();
-      
+       novel.getlocalpage(i,function(txt){
+         if(i<0)i=0;
+         his.index[0]=i;
+         localStorage.setItem("his",JSON.stringify(his));
+         $("#rd-txt").html(txt);
+         $("#page-name").html(novel.list[i][1]+":    "+his.name);		
+         Z = (Y / q).toFixed(2);
+         A(Y, 400);
+         void S();
+       });
     }
     	//上一页
     function _(t) {
-        et.removeClass("fn-on cfg-on");
+        Y--;
+        window.section(Y,t);
+        /*et.removeClass("fn-on cfg-on");
         Y--;
         if(0 >= Y){
           //Y = 1;
@@ -618,10 +722,13 @@ show=function(str){
           void S();
         }
         	return ;
+        	*/
     }
     	//下一页
     function T(t) {
-    		et.removeClass("fn-on cfg-on");
+      Y++;
+      window.section(Y,t);
+    		/*et.removeClass("fn-on cfg-on");
         Y++;
         if(Y > q){
           Y = q;
@@ -631,9 +738,33 @@ show=function(str){
           A(Y, t || 400);
           void S();
        }
-       	return ;
+       	return ;*/
     }
     window.next=T;	
+    window.uppage=function(){
+      Y--;
+      window.section(Y,200);
+    }
+    window.section=function(i,t){
+      //alert(i)
+      et.removeClass("fn-on cfg-on");
+        Y=i;
+        if(0 >= Y){
+          Y = 1;
+          I();
+        }else if(Y > q){
+          Y = q;
+          E()
+        }else{
+          Z = (Y / q).toFixed(2);
+          A(Y, t || 400)
+          void S();
+        }
+        //alert(Y)
+        his.index[1]=Y;
+        localStorage.setItem("his",JSON.stringify(his));
+        	return ;
+    }
     function z() {
         var t = et.hasClass("cfg-on");
         return t && et.removeClass("cfg-on").removeClass("fn-on"),

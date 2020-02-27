@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC
+     "-//NISO//DTD ncx 2005-1//EN"
+     "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx version="2005-1"
+     xml:lang="en-US"
+     xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <!-- The following four metadata items are required for all
+        NCX documents, including those conforming to the relaxed
+        constraints of OPS 2.0 -->
+    <meta name="dtb:uid" content="51037e82-03ff-11dd-9fbb-0018f369440e"/>
+    <meta name="dtb:depth" content="1"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+    <meta name="provider" content="www.cnepub.com"/>
+    <meta name="builder" content="epubBuilder present by www.cnepub.com"/>
+    <meta name="right" content="该文档由epubBuilder生成。epubBuilder为掌上书苑（www.cnepub.com)提供的epub制作工具，仅供个人交流与学习使用。在未获得掌上书苑的商业授权前，不得用于任何商业用途。"/>
+  </head>
+<docTitle><text> 实用内科学第13版 </text></docTitle>
+<docAuthor><text> 侠客霸王 </text></docAuthor>
+<navMap>
+	
+<navPoint id="coverpage" playOrder="0">
+<navLabel><text>封面</text></navLabel>
+<content src="coverpage.html"/>
+</navPoint>
+<navPoint id="page0" playOrder="1">
+<navLabel><text>第1章 开局只有一条船</text></navLabel>
+<content src="page0.html"/>
+</navPoint>
+<navPoint id="page1" playOrder="2">
+<navLabel><text>第2章 赶上了风云时代</text></navLabel>
+<content src="page1.html"/>
+</navPoint>
+<navPoint id="page2" playOrder="3">
+<navLabel><text>第3章 善战者无赫赫之功</text></navLabel>
+<content src="page2.html"/>
+</navPoint>
+<navPoint id="page3" playOrder="4">
+<navLabel><text>第4章 大丰收</text></navLabel>
+<content src="page3.html"/>
+</navPoint>
+<navPoint id="page4" playOrder="5">
+<navLabel><text>第5章 南国风情</text></navLabel>
+<content src="page4.html"/>
+</navPoint>
+<navPoint id="page5" playOrder="6">
+<navLabel><text>第6章 衣锦还乡</text></navLabel>
+<content src="page5.html"/>
+</navPoint>
+<navPoint id="page6" playOrder="7">
+<navLabel><text>第7章 驭下之术</text></navLabel>
+<content src="page6.html"/>
+</navPoint>
+<navPoint id="page7" playOrder="8">
+<navLabel><text>第8章 恩威并施</text></navLabel>
+<content src="page7.html"/>
+</navPoint>
+<navPoint id="page8" playOrder="9">
+<navLabel><text>第9章 一口唾沫一个坑</text></navLabel>
+<content src="page8.html"/>
+</navPoint>
+<navPoint id="page9" playOrder="10">
+<navLabel><text>第10章 顾哥纯爷们，铁血真汉子</text></navLabel>
+<content src="page9.html"/>
+</navPoint>
+<navPoint id="page10" playOrder="11">
+<navLabel><text>第11章 净化心灵</text></navLabel>
+<content src="page10.html"/>
+</navPoint>
+<navPoint id="page11" playOrder="12">
+<navLabel><text>第12章 养猪猪跳海，养狗狗发呆</text></navLabel>
+<content src="page11.html"/>
+</navPoint>
+<navPoint id="page12" playOrder="13">
+<navLabel><text>第13章 洗白上岸</text></navLabel>
+<content src="page12.html"/>
+</navPoint>
+<navPoint id="page13" playOrder="14">
+<navLabel><text>第14章 许可证</text></navLabel>
+<content src="page13.html"/>
+</navPoint>
+<navPoint id="page14" playOrder="15">
+<navLabel><text>第15章 猫腻</text></navLabel>
+<content src="page14.html"/>
+</navPoint>
+<navPoint id="page15" playOrder="16">
+<navLabel><text>第16章 我自愿收人民币</text></navLabel>
+<content src="page15.html"/>
+</navPoint>
+<navPoint id="page16" playOrder="17">
+<navLabel><text>第17章 话不投机半句多</text></navLabel>
+<content src="page16.html"/>
+</navPoint>
+<navPoint id="page17" playOrder="18">
+<navLabel><text>第18章 海鲜生意就是装逼生意</text></navLabel>
+<content src="page17.html"/>
+</navPoint>
+<navPoint id="page18" playOrder="19">
+<navLabel><text>第19章 一周就赚了半条船</text></navLabel>
+<content src="page18.html"/>
+</navPoint>
+<navPoint id="page19" playOrder="20">
+<navLabel><text>第20章 鸟枪换炮</text></navLabel>
+<content src="page19.html"/>
+</navPoint>
+<navPoint id="page20" playOrder="21">
+<navLabel><text>第21章 旱涝保收的退路</text></navLabel>
+<content src="page20.html"/>
+</navPoint>
+<navPoint id="page21" playOrder="22">
+<navLabel><text>第22章 有可复制性的才叫生意</text></navLabel>
+<content src="page21.html"/>
+</navPoint>
+<navPoint id="page22" playOrder="23">
+<navLabel><text>第23章 这可是要成为海贼王的男人</text></navLabel>
+<content src="page22.html"/>
+</navPoint>
+<navPoint id="page23" playOrder="24">
+<navLabel><text>第24章 人无远虑必有近忧</text></navLabel>
+<content src="page23.html"/>
+</navPoint>
+<navPoint id="page24" playOrder="25">
+<navLabel><text>第25章 表面兄弟</text></navLabel>
+<content src="page24.html"/>
+</navPoint>
+<navPoint id="page25" playOrder="26">
+<navLabel><text>第26章 没天理啊</text></navLabel>
+<content src="page25.html"/>
+</navPoint>
+<navPoint id="page26" playOrder="27">
+<navLabel><text>第27章 财帛动人心</text></navLabel>
+<content src="page26.html"/>
+</navPoint>
+<navPoint id="page27" playOrder="28">
+<navLabel><text>第28章 被汉奸盯上了</text></navLabel>
+<content src="page27.html"/>
+</navPoint>
+<navPoint id="page28" playOrder="29">
+<navLabel><text>第29章 我也不知道有多少人找我</text></navLabel>
+<content src="page28.html"/>
+</navPoint>
+<navPoint id="page29" playOrder="30">
+<navLabel><text>第30章 原来只是小鱼小虾</text></navLabel>
+<content src="page29.html"/>
+</navPoint>
+<navPoint id="page30" playOrder="31">
+<navLabel><text>第31章 绕指柔</text></navLabel>
+<content src="page30.html"/>
+</navPoint>
+<navPoint id="page31" playOrder="32">
+<navLabel><text>第32章 这个XX不太冷</text></navLabel>
+<content src="page31.html"/>
+</navPoint>
+<navPoint id="page32" playOrder="33">
+<navLabel><text>第33章 挂逼也需要进化</text></navLabel>
+<content src="page32.html"/>
+</navPoint>
+<navPoint id="page33" playOrder="34">
+<navLabel><text>第34章 招兵买马</text></navLabel>
+<content src="page33.html"/>
+</navPoint>
+<navPoint id="page34" playOrder="35">
+<navLabel><text>第35章 士别三日</text></navLabel>
+<content src="page34.html"/>
+</navPoint>
+<navPoint id="page35" playOrder="36">
+<navLabel><text>第36章 载入史册的会晤</text></navLabel>
+<content src="page35.html"/>
+</navPoint>
+<navPoint id="page36" playOrder="37">
+<navLabel><text>第37章 我不犯不代表我没能力犯</text></navLabel>
+<content src="page36.html"/>
+</navPoint>
+<navPoint id="page37" playOrder="38">
+<navLabel><text>第38章 买到就是赚到！买得越多赚得越多！</text></navLabel>
+<content src="page37.html"/>
+</navPoint>
+<navPoint id="page38" playOrder="39">
+<navLabel><text>第39章 你这个兄弟我交定了</text></navLabel>
+<content src="page38.html"/>
+</navPoint>
+<navPoint id="page39" playOrder="40">
+<navLabel><text>第40章 骗完卖家骗买家</text></navLabel>
+<content src="page39.html"/>
+</navPoint>
+<navPoint id="page40" playOrder="41">
+<navLabel><text>第41章 驱虎吞狼</text></navLabel>
+<content src="page40.html"/>
+</navPoint>
+<navPoint id="page41" playOrder="42">
+<navLabel><text>第42章 尊重属地管辖</text></navLabel>
+<content src="page41.html"/>
+</navPoint>
+<navPoint id="page42" playOrder="43">
+<navLabel><text>第43章 不气盛叫年轻人嘛</text></navLabel>
+<content src="page42.html"/>
+</navPoint>
+<navPoint id="page43" playOrder="44">
+<navLabel><text>第44章 欲令其亡，先令其狂</text></navLabel>
+<content src="page43.html"/>
+</navPoint>
+<navPoint id="page44" playOrder="45">
+<navLabel><text>第45章 风紧扯呼？已经晚了</text></navLabel>
+<content src="page44.html"/>
+</navPoint>
+<navPoint id="page45" playOrder="46">
+<navLabel><text>第46章 嘿嘿嘿</text></navLabel>
+<content src="page45.html"/>
+</navPoint>
+<navPoint id="page46" playOrder="47">
+<navLabel><text>第47章 衣锦还乡</text></navLabel>
+<content src="page46.html"/>
+</navPoint>
+<navPoint id="page47" playOrder="48">
+<navLabel><text>第48章 一见钟情就是见色起意</text></navLabel>
+<content src="page47.html"/>
+</navPoint>
+<navPoint id="page48" playOrder="49">
+<navLabel><text>第49章 缺少生活的毒打</text></navLabel>
+<content src="page48.html"/>
+</navPoint>
+<navPoint id="page49" playOrder="50">
+<navLabel><text>第50章 终于当岛主了</text></navLabel>
+<content src="page49.html"/>
+</navPoint>
+<navPoint id="page50" playOrder="51">
+<navLabel><text>第51章 树欲静而风不止</text></navLabel>
+<content src="page50.html"/>
+</navPoint>
+<navPoint id="page51" playOrder="52">
+<navLabel><text>第52章 江湖险恶</text></navLabel>
+<content src="page51.html"/>
+</navPoint>
+<navPoint id="page52" playOrder="53">
+<navLabel><text>第53章 瞌睡送枕头</text></navLabel>
+<content src="page52.html"/>
+</navPoint>
+<navPoint id="page53" playOrder="54">
+<navLabel><text>第54章 被骚操作闪到了腰</text></navLabel>
+<content src="page53.html"/>
+</navPoint>
+<navPoint id="page54" playOrder="55">
+<navLabel><text>第55章 花钱就是我的工作</text></navLabel>
+<content src="page54.html"/>
+</navPoint>
+<navPoint id="page55" playOrder="56">
+<navLabel><text>第56章 不屑不等于怂</text></navLabel>
+<content src="page55.html"/>
+</navPoint>
+<navPoint id="page56" playOrder="57">
+<navLabel><text>第57章 生活就像一个系统，接了任务才能刷声望</text></navLabel>
+<content src="page56.html"/>
+</navPoint>
+<navPoint id="page57" playOrder="58">
+<navLabel><text>第58章 启发无处不在</text></navLabel>
+<content src="page57.html"/>
+</navPoint>
+<navPoint id="page58" playOrder="59">
+<navLabel><text>第59章 交大校友</text></navLabel>
+<content src="page58.html"/>
+</navPoint>
+<navPoint id="page59" playOrder="60">
+<navLabel><text>第60章 轻松过关</text></navLabel>
+<content src="page59.html"/>
+</navPoint>
+<navPoint id="page60" playOrder="61">
+<navLabel><text>第61章 广开财路</text></navLabel>
+<content src="page60.html"/>
+</navPoint>
+<navPoint id="page61" playOrder="62">
+<navLabel><text>第62章 假装不经意</text></navLabel>
+<content src="page61.html"/>
+</navPoint>
+<navPoint id="page62" playOrder="63">
+<navLabel><text>第63章 不是每条船都值钱的</text></navLabel>
+<content src="page62.html"/>
+</navPoint>
+<navPoint id="page63" playOrder="64">
+<navLabel><text>第64章 腾笼换鸟</text></navLabel>
+<content src="page63.html"/>
+</navPoint>
+<navPoint id="page64" playOrder="65">
+<navLabel><text>第65章 万事俱备</text></navLabel>
+<content src="page64.html"/>
+</navPoint>
+<navPoint id="page65" playOrder="66">
+<navLabel><text>第66章 你咬我啊</text></navLabel>
+<content src="page65.html"/>
+</navPoint>
+<navPoint id="page66" playOrder="67">
+<navLabel><text>第67章 作为一个正直的人，我不想拿金钱羞辱你</text></navLabel>
+<content src="page66.html"/>
+</navPoint>
+<navPoint id="page67" playOrder="68">
+<navLabel><text>第68章 打完收工</text></navLabel>
+<content src="page67.html"/>
+</navPoint>
+<navPoint id="page68" playOrder="69">
+<navLabel><text>第69章 搞实业不攒钱呀</text></navLabel>
+<content src="page68.html"/>
+</navPoint>
+<navPoint id="page69" playOrder="70">
+<navLabel><text>第70章 先定一个小目标，挣他一个亿</text></navLabel>
+<content src="page69.html"/>
+</navPoint>
+<navPoint id="page70" playOrder="71">
+<navLabel><text>第71章 有所为有所不为</text></navLabel>
+<content src="page70.html"/>
+</navPoint>
+<navPoint id="page71" playOrder="72">
+<navLabel><text>第72章 鬼刀一开看不见，手里继续干</text></navLabel>
+<content src="page71.html"/>
+</navPoint>
+<navPoint id="page72" playOrder="73">
+<navLabel><text>第73章 给你喝口汤就能撑死你</text></navLabel>
+<content src="page72.html"/>
+</navPoint>
+<navPoint id="page73" playOrder="74">
+<navLabel><text>第74章 这都是上面的主意</text></navLabel>
+<content src="page73.html"/>
+</navPoint>
+<navPoint id="page74" playOrder="75">
+<navLabel><text>第75章 敲定股份</text></navLabel>
+<content src="page74.html"/>
+</navPoint>
+<navPoint id="page75" playOrder="76">
+<navLabel><text>第76章 西奈！</text></navLabel>
+<content src="page75.html"/>
+</navPoint>
+<navPoint id="page76" playOrder="77">
+<navLabel><text>第77章 水土不服</text></navLabel>
+<content src="page76.html"/>
+</navPoint>
+<navPoint id="page77" playOrder="78">
+<navLabel><text>第78章 交大一员</text></navLabel>
+<content src="page77.html"/>
+</navPoint>
+<navPoint id="page78" playOrder="79">
+<navLabel><text>第79章 有人的地方就有江湖</text></navLabel>
+<content src="page78.html"/>
+</navPoint>
+<navPoint id="page79" playOrder="80">
+<navLabel><text>第80章 有所为有所不为</text></navLabel>
+<content src="page79.html"/>
+</navPoint>
+<navPoint id="page80" playOrder="81">
+<navLabel><text>第81章 人民币战士</text></navLabel>
+<content src="page80.html"/>
+</navPoint>
+<navPoint id="page81" playOrder="82">
+<navLabel><text>第82章 江湖不是打打杀杀</text></navLabel>
+<content src="page81.html"/>
+</navPoint>
+<navPoint id="page82" playOrder="83">
+<navLabel><text>第83章 二事不烦二主</text></navLabel>
+<content src="page82.html"/>
+</navPoint>
+<navPoint id="page83" playOrder="84">
+<navLabel><text>第84章 只见贼吃肉，不知贼挨打</text></navLabel>
+<content src="page83.html"/>
+</navPoint>
+<navPoint id="page84" playOrder="85">
+<navLabel><text>第85章 崽卖爷田能不爽么</text></navLabel>
+<content src="page84.html"/>
+</navPoint>
+<navPoint id="page85" playOrder="86">
+<navLabel><text>第86章 喝一瓶伏特加打一万折扣</text></navLabel>
+<content src="page85.html"/>
+</navPoint>
+<navPoint id="page86" playOrder="87">
+<navLabel><text>第87章 这事儿老子有经验</text></navLabel>
+<content src="page86.html"/>
+</navPoint>
+<navPoint id="page87" playOrder="88">
+<navLabel><text>第88章 帮助老毛子去库存</text></navLabel>
+<content src="page87.html"/>
+</navPoint>
+<navPoint id="page88" playOrder="89">
+<navLabel><text>第89章 长线投资</text></navLabel>
+<content src="page88.html"/>
+</navPoint>
+<navPoint id="page89" playOrder="90">
+<navLabel><text>第90章 小鬼难缠</text></navLabel>
+<content src="page89.html"/>
+</navPoint>
+<navPoint id="page90" playOrder="91">
+<navLabel><text>第91章 迪拜人就是打肿脸充胖子</text></navLabel>
+<content src="page90.html"/>
+</navPoint>
+<navPoint id="page91" playOrder="92">
+<navLabel><text>第92章 两个世界的隔阂</text></navLabel>
+<content src="page91.html"/>
+</navPoint>
+<navPoint id="page92" playOrder="93">
+<navLabel><text>第93章 各人各缘法</text></navLabel>
+<content src="page92.html"/>
+</navPoint>
+<navPoint id="page93" playOrder="94">
+<navLabel><text>第94章 脱颖而出</text></navLabel>
+<content src="page93.html"/>
+</navPoint>
+<navPoint id="page94" playOrder="95">
+<navLabel><text>第95章 烫手山芋</text></navLabel>
+<content src="page94.html"/>
+</navPoint>
+<navPoint id="page95" playOrder="96">
+<navLabel><text>第96章 不要想歪了</text></navLabel>
+<content src="page95.html"/>
+</navPoint>
+<navPoint id="page96" playOrder="97">
+<navLabel><text>第97章 如水归下</text></navLabel>
+<content src="page96.html"/>
+</navPoint>
+<navPoint id="page97" playOrder="98">
+<navLabel><text>第98章 裤裆里放屁两股道</text></navLabel>
+<content src="page97.html"/>
+</navPoint>
+<navPoint id="page98" playOrder="99">
+<navLabel><text>第99章 我的钱都是辛苦赚来的</text></navLabel>
+<content src="page98.html"/>
+</navPoint>
+<navPoint id="page99" playOrder="100">
+<navLabel><text>第100章 蟹工船</text></navLabel>
+<content src="page99.html"/>
+</navPoint>
+<navPoint id="page100" playOrder="101">
+<navLabel><text>第101章 醉翁之意不在酒</text></navLabel>
+<content src="page100.html"/>
+</navPoint>
+<navPoint id="page101" playOrder="102">
+<navLabel><text>第102章 运银船</text></navLabel>
+<content src="page101.html"/>
+</navPoint>
+<navPoint id="page102" playOrder="103">
+<navLabel><text>第103章 做梦就做大一点</text></navLabel>
+<content src="page102.html"/>
+</navPoint>
+<navPoint id="page103" playOrder="104">
+<navLabel><text>第104章 打完收工</text></navLabel>
+<content src="page103.html"/>
+</navPoint>
+<navPoint id="page104" playOrder="105">
+<navLabel><text>第105章 习惯了从天而降</text></navLabel>
+<content src="page104.html"/>
+</navPoint>
+<navPoint id="page105" playOrder="106">
+<navLabel><text>第106章 老子最擅长对付双标</text></navLabel>
+<content src="page105.html"/>
+</navPoint>
+<navPoint id="page106" playOrder="107">
+<navLabel><text>第107章 手足兄弟得加钱</text></navLabel>
+<content src="page106.html"/>
+</navPoint>
+<navPoint id="page107" playOrder="108">
+<navLabel><text>第108章 空中飞人</text></navLabel>
+<content src="page107.html"/>
+</navPoint>
+<navPoint id="page108" playOrder="109">
+<navLabel><text>第109章 风险投资投的是人</text></navLabel>
+<content src="page108.html"/>
+</navPoint>
+<navPoint id="page109" playOrder="110">
+<navLabel><text>第110章 木秀于林</text></navLabel>
+<content src="page109.html"/>
+</navPoint>
+<navPoint id="page110" playOrder="111">
+<navLabel><text>第111章 一二三四再来一次</text></navLabel>
+<content src="page110.html"/>
+</navPoint>
+<navPoint id="page111" playOrder="112">
+<navLabel><text>第112章 这不科学</text></navLabel>
+<content src="page111.html"/>
+</navPoint>
+<navPoint id="page112" playOrder="113">
+<navLabel><text>第113章 你一定是逗比吧</text></navLabel>
+<content src="page112.html"/>
+</navPoint>
+<navPoint id="page113" playOrder="114">
+<navLabel><text>第114章 打完收工</text></navLabel>
+<content src="page113.html"/>
+</navPoint>
+<navPoint id="page114" playOrder="115">
+<navLabel><text>第115章 组建班底</text></navLabel>
+<content src="page114.html"/>
+</navPoint>
+<navPoint id="page115" playOrder="116">
+<navLabel><text>第116章 名不正则言不顺</text></navLabel>
+<content src="page115.html"/>
+</navPoint>
+<navPoint id="page116" playOrder="117">
+<navLabel><text>第117章 官不带长放屁不响</text></navLabel>
+<content src="page116.html"/>
+</navPoint>
+<navPoint id="page117" playOrder="118">
+<navLabel><text>第118章 智商税</text></navLabel>
+<content src="page117.html"/>
+</navPoint>
+<navPoint id="page118" playOrder="119">
+<navLabel><text>第119章 你已经死了</text></navLabel>
+<content src="page118.html"/>
+</navPoint>
+<navPoint id="page119" playOrder="120">
+<navLabel><text>第120章 杀人夺宝还用看你得没得罪我么？</text></navLabel>
+<content src="page119.html"/>
+</navPoint>
+<navPoint id="page120" playOrder="121">
+<navLabel><text>第121章 这都是花钱请来给我送人头的</text></navLabel>
+<content src="page120.html"/>
+</navPoint>
+<navPoint id="page121" playOrder="122">
+<navLabel><text>第122章 彼之奸贼，此之枭雄</text></navLabel>
+<content src="page121.html"/>
+</navPoint>
+<navPoint id="page122" playOrder="123">
+<navLabel><text>第123章 草世巨奸</text></navLabel>
+<content src="page122.html"/>
+</navPoint>
+<navPoint id="page123" playOrder="124">
+<navLabel><text>第124章 想杀我，你可以试试</text></navLabel>
+<content src="page123.html"/>
+</navPoint>
+<navPoint id="page124" playOrder="125">
+<navLabel><text>第125章 你不专业呀</text></navLabel>
+<content src="page124.html"/>
+</navPoint>
+<navPoint id="page125" playOrder="126">
+<navLabel><text>第126章 荷兰人来打扫卫生了</text></navLabel>
+<content src="page125.html"/>
+</navPoint>
+<navPoint id="page126" playOrder="127">
+<navLabel><text>第127章 物以类聚</text></navLabel>
+<content src="page126.html"/>
+</navPoint>
+<navPoint id="page127" playOrder="128">
+<navLabel><text>第128章 我方没有伤亡</text></navLabel>
+<content src="page127.html"/>
+</navPoint>
+<navPoint id="page128" playOrder="129">
+<navLabel><text>第129章 是骡子是马拉出来溜溜</text></navLabel>
+<content src="page128.html"/>
+</navPoint>
+<navPoint id="page129" playOrder="130">
+<navLabel><text>第130章 法盲不是问题</text></navLabel>
+<content src="page129.html"/>
+</navPoint>
+<navPoint id="page130" playOrder="131">
+<navLabel><text>第131章 老子得罪不起还不能玩消失么</text></navLabel>
+<content src="page130.html"/>
+</navPoint>
+<navPoint id="page131" playOrder="132">
+<navLabel><text>第132章 鱼龙混杂</text></navLabel>
+<content src="page131.html"/>
+</navPoint>
+<navPoint id="page132" playOrder="133">
+<navLabel><text>第133章 钓鱼</text></navLabel>
+<content src="page132.html"/>
+</navPoint>
+<navPoint id="page133" playOrder="134">
+<navLabel><text>第134章 你只是开箱子的人</text></navLabel>
+<content src="page133.html"/>
+</navPoint>
+<navPoint id="page134" playOrder="135">
+<navLabel><text>第135章 严加逼供</text></navLabel>
+<content src="page134.html"/>
+</navPoint>
+<navPoint id="page135" playOrder="136">
+<navLabel><text>第136章 我跟统领也有点交情</text></navLabel>
+<content src="page135.html"/>
+</navPoint>
+<navPoint id="page136" playOrder="137">
+<navLabel><text>第137章 报仇雪恨</text></navLabel>
+<content src="page136.html"/>
+</navPoint>
+<navPoint id="page137" playOrder="138">
+<navLabel><text>第138章 世界纪录就是一面破筛子</text></navLabel>
+<content src="page137.html"/>
+</navPoint>
+<navPoint id="page138" playOrder="139">
+<navLabel><text>第1章 崇拜不分国界</text></navLabel>
+<content src="page138.html"/>
+</navPoint>
+<navPoint id="page139" playOrder="140">
+<navLabel><text>第2章 有实力就是任性</text></navLabel>
+<content src="page139.html"/>
+</navPoint>
+<navPoint id="page140" playOrder="141">
+<navLabel><text>第3章 您也是忍者神龟啊</text></navLabel>
+<content src="page140.html"/>
+</navPoint>
+<navPoint id="page141" playOrder="142">
+<navLabel><text>第4章 高屋建瓴</text></navLabel>
+<content src="page141.html"/>
+</navPoint>
+<navPoint id="page142" playOrder="143">
+<navLabel><text>第5章 买买买-上</text></navLabel>
+<content src="page142.html"/>
+</navPoint>
+<navPoint id="page143" playOrder="144">
+<navLabel><text>第六更不用等了，我心态调整一下</text></navLabel>
+<content src="page143.html"/>
+</navPoint>
+<navPoint id="page144" playOrder="145">
+<navLabel><text>第6章 雷达站还要花钱买？</text></navLabel>
+<content src="page144.html"/>
+</navPoint>
+<navPoint id="page145" playOrder="146">
+<navLabel><text>第7章 不要紧张，我脚下没有油田</text></navLabel>
+<content src="page145.html"/>
+</navPoint>
+<navPoint id="page146" playOrder="147">
+<navLabel><text>第8章 你的核心利益是什么</text></navLabel>
+<content src="page146.html"/>
+</navPoint>
+<navPoint id="page147" playOrder="148">
+<navLabel><text>第9章 破土动工</text></navLabel>
+<content src="page147.html"/>
+</navPoint>
+<navPoint id="page148" playOrder="149">
+<navLabel><text>第10章 演技迫真</text></navLabel>
+<content src="page148.html"/>
+</navPoint>
+<navPoint id="page149" playOrder="150">
+<navLabel><text>第11章 你招那么多美女想干嘛？</text></navLabel>
+<content src="page149.html"/>
+</navPoint>
+<navPoint id="page150" playOrder="151">
+<navLabel><text>第12章 你陷思，定体问</text></navLabel>
+<content src="page150.html"/>
+</navPoint>
+<navPoint id="page151" playOrder="152">
+<navLabel><text>第13章 “崇中媚华”？不存在的</text></navLabel>
+<content src="page151.html"/>
+</navPoint>
+<navPoint id="page152" playOrder="153">
+<navLabel><text>第14章 你还管得了观众爱看谁</text></navLabel>
+<content src="page152.html"/>
+</navPoint>
+<navPoint id="page153" playOrder="154">
+<navLabel><text>第15章 钢铁直男</text></navLabel>
+<content src="page153.html"/>
+</navPoint>
+<navPoint id="page154" playOrder="155">
+<navLabel><text>第16章 漏得跟筛子一样</text></navLabel>
+<content src="page154.html"/>
+</navPoint>
+<navPoint id="page155" playOrder="156">
+<navLabel><text>第17章 我就说果然有洋妞吧！</text></navLabel>
+<content src="page155.html"/>
+</navPoint>
+<navPoint id="page156" playOrder="157">
+<navLabel><text>第18章 您的护球像亨利</text></navLabel>
+<content src="page156.html"/>
+</navPoint>
+<navPoint id="page157" playOrder="158">
+<navLabel><text>第19章 哪有什么岁月静好</text></navLabel>
+<content src="page157.html"/>
+</navPoint>
+<navPoint id="page158" playOrder="159">
+<navLabel><text>第20章 刘备的韭菜</text></navLabel>
+<content src="page158.html"/>
+</navPoint>
+<navPoint id="page159" playOrder="160">
+<navLabel><text>第21章 出国准备</text></navLabel>
+<content src="page159.html"/>
+</navPoint>
+<navPoint id="page160" playOrder="161">
+<navLabel><text>第22章 初临大洋国</text></navLabel>
+<content src="page160.html"/>
+</navPoint>
+<navPoint id="page161" playOrder="162">
+<navLabel><text>第23章 富在深山有远亲</text></navLabel>
+<content src="page161.html"/>
+</navPoint>
+<navPoint id="page162" playOrder="163">
+<navLabel><text>第24章 好吃就多吃点，吃到恶心为止就戒了</text></navLabel>
+<content src="page162.html"/>
+</navPoint>
+<navPoint id="page163" playOrder="164">
+<navLabel><text>第25章 要俗就俗到底</text></navLabel>
+<content src="page163.html"/>
+</navPoint>
+<navPoint id="page164" playOrder="165">
+<navLabel><text>第26章 丧心病狂</text></navLabel>
+<content src="page164.html"/>
+</navPoint>
+<navPoint id="page165" playOrder="166">
+<navLabel><text>第27章 互相利用的狗男女</text></navLabel>
+<content src="page165.html"/>
+</navPoint>
+<navPoint id="page166" playOrder="167">
+<navLabel><text>第28章 宁教天下人负我</text></navLabel>
+<content src="page166.html"/>
+</navPoint>
+<navPoint id="page167" playOrder="168">
+<navLabel><text>第29章 送脸上门</text></navLabel>
+<content src="page167.html"/>
+</navPoint>
+<navPoint id="page168" playOrder="169">
+<navLabel><text>第30章 海神</text></navLabel>
+<content src="page168.html"/>
+</navPoint>
+<navPoint id="page169" playOrder="170">
+<navLabel><text>第31章 一张一弛，贤者之道</text></navLabel>
+<content src="page169.html"/>
+</navPoint>
+<navPoint id="page170" playOrder="171">
+<navLabel><text>第32章 “身残志坚”</text></navLabel>
+<content src="page170.html"/>
+</navPoint>
+<navPoint id="page171" playOrder="172">
+<navLabel><text>第33章 外行看热闹，内行看门道</text></navLabel>
+<content src="page171.html"/>
+</navPoint>
+<navPoint id="page172" playOrder="173">
+<navLabel><text>第34章 车轮战你们也打不过，还不如一起上吧</text></navLabel>
+<content src="page172.html"/>
+</navPoint>
+<navPoint id="page173" playOrder="174">
+<navLabel><text>第35章 范达尔鹿盔</text></navLabel>
+<content src="page173.html"/>
+</navPoint>
+<navPoint id="page174" playOrder="175">
+<navLabel><text>第36章 收割红利</text></navLabel>
+<content src="page174.html"/>
+</navPoint>
+<navPoint id="page175" playOrder="176">
+<navLabel><text>第37章 加勒比海盗</text></navLabel>
+<content src="page175.html"/>
+</navPoint>
+<navPoint id="page176" playOrder="177">
+<navLabel><text>第38章 受害妄想</text></navLabel>
+<content src="page176.html"/>
+</navPoint>
+<navPoint id="page177" playOrder="178">
+<navLabel><text>第39章 这里是你说来就来、说走就走的么</text></navLabel>
+<content src="page177.html"/>
+</navPoint>
+<navPoint id="page178" playOrder="179">
+<navLabel><text>第40章 万里送鹅毛</text></navLabel>
+<content src="page178.html"/>
+</navPoint>
+<navPoint id="page179" playOrder="180">
+<navLabel><text>第41章 哥不怕丑闻</text></navLabel>
+<content src="page179.html"/>
+</navPoint>
+<navPoint id="page180" playOrder="181">
+<navLabel><text>第42章 真人真事怎么能叫诽谤呢</text></navLabel>
+<content src="page180.html"/>
+</navPoint>
+<navPoint id="page181" playOrder="182">
+<navLabel><text>第43章 小弟越多越好</text></navLabel>
+<content src="page181.html"/>
+</navPoint>
+<navPoint id="page182" playOrder="183">
+<navLabel><text>第44章 酝酿震惊部</text></navLabel>
+<content src="page182.html"/>
+</navPoint>
+<navPoint id="page183" playOrder="184">
+<navLabel><text>第45章 天马行空</text></navLabel>
+<content src="page183.html"/>
+</navPoint>
+<navPoint id="page184" playOrder="185">
+<navLabel><text>第46章 历史的胸襟</text></navLabel>
+<content src="page184.html"/>
+</navPoint>
+<navPoint id="page185" playOrder="186">
+<navLabel><text>第47章 争国本</text></navLabel>
+<content src="page185.html"/>
+</navPoint>
+<navPoint id="page186" playOrder="187">
+<navLabel><text>第48章 民猪是最差的投资环境</text></navLabel>
+<content src="page186.html"/>
+</navPoint>
+<navPoint id="page187" playOrder="188">
+<navLabel><text>第49章 我对萝莉没有兴趣</text></navLabel>
+<content src="page187.html"/>
+</navPoint>
+<navPoint id="page188" playOrder="189">
+<navLabel><text>第50章 学游泳就像学外语</text></navLabel>
+<content src="page188.html"/>
+</navPoint>
+<navPoint id="page189" playOrder="190">
+<navLabel><text>第51章 汤姆肥宅</text></navLabel>
+<content src="page189.html"/>
+</navPoint>
+<navPoint id="page190" playOrder="191">
+<navLabel><text>第52章 偷鸡不成蚀把米</text></navLabel>
+<content src="page190.html"/>
+</navPoint>
+<navPoint id="page191" playOrder="192">
+<navLabel><text>第53章 你没有好奇心的吗</text></navLabel>
+<content src="page191.html"/>
+</navPoint>
+<navPoint id="page192" playOrder="193">
+<navLabel><text>第54章 东亚病夫的招牌已被我一脚踢开</text></navLabel>
+<content src="page192.html"/>
+</navPoint>
+<navPoint id="page193" playOrder="194">
+<navLabel><text>第55章 我都没干坏事干嘛要拆摄像头</text></navLabel>
+<content src="page193.html"/>
+</navPoint>
+<navPoint id="page194" playOrder="195">
+<navLabel><text>第56章 水满则溢月盈则亏</text></navLabel>
+<content src="page194.html"/>
+</navPoint>
+<navPoint id="page195" playOrder="196">
+<navLabel><text>第57章 历史的篇章</text></navLabel>
+<content src="page195.html"/>
+</navPoint>
+<navPoint id="page196" playOrder="197">
+<navLabel><text>第58章 难得糊涂</text></navLabel>
+<content src="page196.html"/>
+</navPoint>
+<navPoint id="page197" playOrder="198">
+<navLabel><text>第59章 一身正气的老硬币</text></navLabel>
+<content src="page197.html"/>
+</navPoint>
+<navPoint id="page198" playOrder="199">
+<navLabel><text>第60章 悄悄的进村开枪滴不要</text></navLabel>
+<content src="page198.html"/>
+</navPoint>
+<navPoint id="page199" playOrder="200">
+<navLabel><text>第61章 房子只是车牌工具</text></navLabel>
+<content src="page199.html"/>
+</navPoint>
+<navPoint id="page200" playOrder="201">
+<navLabel><text>第62章 买不起和不屑于买</text></navLabel>
+<content src="page200.html"/>
+</navPoint>
+<navPoint id="page201" playOrder="202">
+<navLabel><text>第63章 假作真时真亦假</text></navLabel>
+<content src="page201.html"/>
+</navPoint>
+<navPoint id="page202" playOrder="203">
+<navLabel><text>第64章 狙击手要有耐心</text></navLabel>
+<content src="page202.html"/>
+</navPoint>
+<navPoint id="page203" playOrder="204">
+<navLabel><text>第65章 一个国家最穷的人的尊严程度，是这个国家的科学家决定的</text></navLabel>
+<content src="page203.html"/>
+</navPoint>
+<navPoint id="page204" playOrder="205">
+<navLabel><text>第66章 先挣他三点五个亿</text></navLabel>
+<content src="page204.html"/>
+</navPoint>
+<navPoint id="page205" playOrder="206">
+<navLabel><text>第67章 虽然我抽烟喝酒纹身做空，但我知道我是一个价值投资者</text></navLabel>
+<content src="page205.html"/>
+</navPoint>
+<navPoint id="page206" playOrder="207">
+<navLabel><text>第68章 我是来帮助泰国人民的</text></navLabel>
+<content src="page206.html"/>
+</navPoint>
+<navPoint id="page207" playOrder="208">
+<navLabel><text>第69章 老乡见老乡背后开一枪</text></navLabel>
+<content src="page207.html"/>
+</navPoint>
+<navPoint id="page208" playOrder="209">
+<navLabel><text>第70章 我也不想这样的</text></navLabel>
+<content src="page208.html"/>
+</navPoint>
+<navPoint id="page209" playOrder="210">
+<navLabel><text>第71章 吃干抹净擦擦嘴</text></navLabel>
+<content src="page209.html"/>
+</navPoint>
+<navPoint id="page210" playOrder="211">
+<navLabel><text>第72章 这个把子我来扛</text></navLabel>
+<content src="page210.html"/>
+</navPoint>
+<navPoint id="page211" playOrder="212">
+<navLabel><text>第73章 咬牙切齿</text></navLabel>
+<content src="page211.html"/>
+</navPoint>
+<navPoint id="page212" playOrder="213">
+<navLabel><text>第74章 顾大善人</text></navLabel>
+<content src="page212.html"/>
+</navPoint>
+<navPoint id="page213" playOrder="214">
+<navLabel><text>第75章 天字第一号愣头青</text></navLabel>
+<content src="page213.html"/>
+</navPoint>
+<navPoint id="page214" playOrder="215">
+<navLabel><text>第76章 举国飞升</text></navLabel>
+<content src="page214.html"/>
+</navPoint>
+<navPoint id="page215" playOrder="216">
+<navLabel><text>第77章 一千令吉起征点</text></navLabel>
+<content src="page215.html"/>
+</navPoint>
+<navPoint id="page216" playOrder="217">
+<navLabel><text>第78章 剪不断理还乱</text></navLabel>
+<content src="page216.html"/>
+</navPoint>
+<navPoint id="page217" playOrder="218">
+<navLabel><text>第79章 强势反击</text></navLabel>
+<content src="page217.html"/>
+</navPoint>
+<navPoint id="page218" playOrder="219">
+<navLabel><text>第80章 你伤害了我你应该向我道歉</text></navLabel>
+<content src="page218.html"/>
+</navPoint>
+<navPoint id="page219" playOrder="220">
+<navLabel><text>第81章 别杀我，我的命没有萨达姆值钱</text></navLabel>
+<content src="page219.html"/>
+</navPoint>
+<navPoint id="page220" playOrder="221">
+<navLabel><text>第82章 算尽天下</text></navLabel>
+<content src="page220.html"/>
+</navPoint>
+<navPoint id="page221" playOrder="222">
+<navLabel><text>第83章 文化胜利就得抢奇观</text></navLabel>
+<content src="page221.html"/>
+</navPoint>
+<navPoint id="page222" playOrder="223">
+<navLabel><text>第84章 你都欠多少贷款了？</text></navLabel>
+<content src="page222.html"/>
+</navPoint>
+<navPoint id="page223" playOrder="224">
+<navLabel><text>第85章 我们跟壳牌石油不一样</text></navLabel>
+<content src="page223.html"/>
+</navPoint>
+<navPoint id="page224" playOrder="225">
+<navLabel><text>第86章 您这儿有阴阳合同么？</text></navLabel>
+<content src="page224.html"/>
+</navPoint>
+<navPoint id="page225" playOrder="226">
+<navLabel><text>第87章 马来首富</text></navLabel>
+<content src="page225.html"/>
+</navPoint>
+<navPoint id="page226" playOrder="227">
+<navLabel><text>第88章 白菜价抄底</text></navLabel>
+<content src="page226.html"/>
+</navPoint>
+
+
+
+
+</navMap>
+</ncx>
+
+

@@ -1,0 +1,250 @@
+<html>
+<head>
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=gb2312" />
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<hta:application id="hta"
+applicationname="WiseSoft Computer Info Tool" 
+scroll="yes" 
+singleinstance="no"
+        
+windowstate="normal"
+/>
+
+<style>
+	html,body{
+		height: 100%;
+		width: 100%;
+	}
+body {
+    padding:0;  /*去除内边距*/
+    border:0;   /*去除边框*/
+    margin:0;   /*去除外边距*/
+}
+</style>
+<script src="script/es6-promise.min.js"></script>
+<script src="script/http.js"></script>
+</head>
+
+<body>
+<iframe id=ifr1  src="noveldownload.html" width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"  allowtransparency="yes"></iframe>
+<script>
+	window.addEventListener('beforeunload', function(){ 
+		/* var rel = false;//"asdfawfewf";
+		var event=window.event
+		if (!window.event) {
+		    event.returnValue = rel;
+		} else {
+		    window.event.returnValue = rel;
+		} */
+		//return true;
+	});
+	var _fso = new ActiveXObject("Scripting.FileSystemObject");
+	var basepath=_fso.GetFile(location.href.replace("file:///","")).ParentFolder.path;
+	read = function(path,fun) {
+		var p=basepath+"/"+path;
+		if(!_fso.FileExists(p)){
+			return "";
+		}
+		var CharSet = "utf-8";
+		var str = "";
+		var stm = new ActiveXObject("adodb.stream")
+		stm.Type = 2; //以本模式读取
+		stm.mode = 3;
+		stm.charset = CharSet;
+		stm.open();
+		stm.loadfromfile(path);
+		str = stm.readtext();
+		stm.Close();
+		stm = null;
+		fun(str)
+		return str;
+	};
+	write = function(path, txt,bool) {
+		var p=basepath+"/"+path;
+		
+		var CharSet = "utf-8"
+		var stm = new ActiveXObject("adodb.stream")
+		stm.Type = 2 //以本模式读取
+		stm.mode = 3
+		stm.charset = CharSet
+		stm.open()
+		stm.WriteText(txt)
+		stm.SaveToFile(path, 2)
+		stm.flush
+		stm.Close
+		stm = null
+	}
+	createFolder=function(path){
+		var p=basepath+"/"+path;
+		if(!_fso.FolderExists(p)){
+			_fso.CreateFolder(p)
+		}
+	}
+	copy=function(path1,path2){
+		var p1=basepath+"/"+path1;
+		var p2=basepath+"/"+path2;
+		_fso.CopyFile(p1,p2,true);
+	}
+	writeZip=function(myZipFile,mySourceDir){
+		var myZipFile1=basepath+"\\"+myZipFile;
+		//myZipFile1=basepath+"\\zip2.zip";
+		var myZipFile=basepath+"\\zip.zip";
+		var mySourceDir=basepath+"\\"+mySourceDir;
+		if(!_fso.FolderExists(mySourceDir)){
+			return "";
+		}
+		if(_fso.FileExists(myZipFile)){
+			_fso.GetFile(myZipFile).delete()
+		}
+		if(_fso.FileExists(myZipFile1)){
+			_fso.GetFile(myZipFile1).delete()
+		}
+		
+		//mySourceDir="C:\\Users\\fengjie\\Documents\\GitHub\\noveldownload\\zip"
+		//myZipFile="C:\\Users\\fengjie\\Documents\\GitHub\\noveldownload\\test.zip"
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var FType;
+		if(fso.FolderExists(mySourceDir)){
+			FType = "Folder"
+		}else if(fso.FileExists(mySourceDir)){
+			FType = "File"
+			FileName = fso.GetFileName(mySourceDir)
+			var len=mySourceDir.length - FileName.length;
+			FolderPath = mySourceDir.substring(0,len);
+		}else{
+			return 0;
+		}
+		var f = fso.CreateTextFile(myZipFile, true)
+		f.Write("PK" + String.fromCharCode(5) + String.fromCharCode(6) + new Array(19).join(String.fromCharCode(0)))
+		f.Close();
+		var objShell = new ActiveXObject("Shell.Application")
+		switch(FType){
+			case "Folder":
+			var objSource = objShell.NameSpace(mySourceDir)
+			
+			var objFolderItem = objSource.Items()
+			break;
+			case "File":
+			var objSource = objShell.NameSpace(FolderPath)
+			var objFolderItem = objSource.ParseName(FileName)
+			break;
+		}
+		var objTarget = objShell.NameSpace(myZipFile)
+		intOptions = 256
+		objTarget.CopyHere(objFolderItem, intOptions)
+		//if(myZipFile!=myZipFile1&&)
+		//var _fso = new ActiveXObject("Scripting.FileSystemObject");
+		setTimeout(function(a){
+			var _fso = new ActiveXObject("Scripting.FileSystemObject");
+			/* myZipFile1="C:\\Users\\fengjie\\Documents\\GitHub\\noveldownload\\zip2.zip"
+			myZipFile="C:\\Users\\fengjie\\Documents\\GitHub\\noveldownload\\zip.zip" */
+			_fso.GetFile(myZipFile).copy(myZipFile1);
+			alert(true)
+		},1000)
+
+	}
+	
+	sendMail=function(email,title,body,name,path){
+		var File_path=basepath+"/"+path;
+		var to_path=basepath+"/"+name;
+		alert(to_path)
+		_fso.CopyFile(File_path,to_path,true);
+		setTimeout(function(a){
+			var Email_obj=body
+			var Email_From = "2809808818@qq.com" //发件人邮箱 
+			var Password = "pdqlhnrgkueudgec" //发件人邮箱密码 
+			var Email_To = email //收件人邮箱 
+			
+			//打开计算机telent服务才能运行	
+			var CDO = new ActiveXObject("CDO.Message") //创建CDO.Message对象 
+			CDO.Subject = Email_obj//邮件主题 
+			CDO.From = Email_From //发件人地址 
+			CDO.To = Email_To //收件人地址 
+			CDO.AddAttachment (to_path)  //邮件附件文件路径 
+			var schema = "http://schemas.microsoft.com/cdo/configuration/"
+			with (CDO.Configuration.Fields) {
+				//用with关键字减少代码输入 
+				Item(schema + "sendusing") = 2 //使用网络上的SMTP服务器而不是本地的SMTP服务器 
+				Item(schema + "smtpserver") = "smtp.qq.com" //SMTP服务器地址 
+				Item(schema + "smtpauthenticate") = 1 //服务器认证方式 
+				Item(schema + "sendusername") = Email_From //发件人邮箱 
+				Item(schema + "sendpassword") = Password //发件人邮箱密码 
+				Item(schema + "smtpserverport") = 25//465 //SMTP服务器端口 
+				Item(schema + "smtpusessl") = true //是否使用SSL 
+				Item(schema + "smtpconnectiontimeout") = 60 //连接服务器的超时时间 
+				Update() //更新设置 
+			}
+			alert(true)
+			CDO.Send() //发送邮件 
+		},5000)
+		
+	}
+	fso={
+		fso:{
+			getList:function(a){
+				var f=_fso.GetFolder(basepath+"/"+a)
+				var fc = new Enumerator(f.files);
+				var arr=[];
+				for (; !fc.atEnd(); fc.moveNext()) {
+					arr.push(fc.item());
+				}
+				return JSON.stringify(arr)
+			},
+			read:read,
+			write:write
+		},
+		read:read,
+		write:write,
+		createFolder:createFolder,
+		copy:copy,
+		writeZip:writeZip,
+		sendMail:sendMail
+	}
+	//alert(fso)
+	window.onload=function(a){
+		
+	}
+	ifr1.addEventListener('beforeunload', function(){ 
+		window.location.reload()
+	});
+	/* document.getElementById("ifr1").onload=function(){
+		alert(2)
+	} */
+	ifr1.addEventListener('load', function(){ 
+		ifr1.fso=fso;
+		ifr1.http=http
+		//alert(ifr1.document.parentWindow.fso=fso)
+	});
+	document.addEventListener('drop', function (e) {
+		handleFiles(e.dataTransfer.files)
+		e.preventDefault()
+	}, false)
+	document.addEventListener('dragover', function (e) {
+		e.preventDefault()
+	}, false)
+	handleFiles = function(files) {  
+		for (var i = 0; i < files.length; i++) {  
+			var file = files[i];
+			alert(file.name)
+			alert(file.webkitRelativePath)
+			if (!file.type.match(/image*/)) {  
+				continue;  
+			}  
+	   
+			var img = document.createElement("img");  
+			img.classList.add("obj");  
+			img.file = file;  
+			preview.appendChild(img);  
+	   
+			var reader = new FileReader();  
+			reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);  
+			reader.readAsDataURL(file);  
+		}  
+	}  
+</script>
+</body>
+</html>

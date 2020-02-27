@@ -10,20 +10,27 @@
 <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>小说下载</title>
+
 <script src="script/jquery-1.8.0.js"></script>
 <script src="script/shift.js"></script>
+<script src="script/msg.js"></script>
 <script src="script/base.js"></script>
 <script src="script/menu.js"></script>
-<!-- <script src="novel.js"></script> -->
+<script src="script/http.js" type="text/javascript" charset="utf-8"></script>
+<script src="script/es6-promise.min.js"></script>
 <script src="script/list.js"></script>
 <script src="script/page.js"></script>
 <script src="script/zipFile.js"></script>
 <script src="script/Shelf.js"></script>
 <script src="script/search.js"></script>
+<script src="script/bds.js"></script>
 <script src="script/winObj.js"></script>
+<script src="fso_jsonp.js"></script>
+<script src="novel/base.js"></script>
 <!-- <script src="http://git.docfeng.top/novel.js"></script> -->
 <link rel="stylesheet" href="css/main.css" type="text/css"></link> 
 <link rel="stylesheet" href="css/test.css" type="text/css">
+<link rel="stylesheet" href="css/msg.css" type="text/css">
 
 <style type='text/css'>
 //小说
@@ -33,7 +40,16 @@
 	display: none;
 } */	
 //table h3{font-size:10%;}
-
+input{
+  //height:1.5em;
+  font-size:0.7em;
+}
+input[type=text]{
+  height:15px;
+}
+input[type=number]{
+  height:15px;
+}
 #novel_view_body{
 	background: #666;
       width:100%;
@@ -49,20 +65,24 @@
 <body>
 <div class="myhead" id="Mytitle" style="height:18px;"></div>
 <div class="menu fix" id="menu">
-    <ul data-index=0>
+    <ul data-index=2>
         <li>下载</li>
         <li>调试eval</li>
         <li>书架</li>
         <li>目录
-          <ul>
+          <!--<ul>
             <li>6</li>
+            <li>7</li>
           </ul>
+          -->
         </li>
+        <li>console</li>
+        <li>bds</li>
     </ul>
  <!--0-->
     <div>
         <form id="form_1">
-            目录地址:<input type="text" name="list_url" onchange="List.checkReg(this)">
+            目录地址:<input type="text" name="list_url" value="http://www.xbiquge.la/18/18245/">
             index<input type="text" name="index" value="0/0" size=2><br/>
             start:<input type="text" name="start" value=0 size=1>
             end:<input type="text" name="end" value=0 size=1>
@@ -72,16 +92,23 @@
             本地章节:<input type="text" name="old_page"><br />
             <input type="button" value='下载' onclick="load.download2();"/>
             <input type="button" value='下载1' onclick="List.download();"/>
+            <input type="button" value='html' onclick="http.get(win.url).then(function(a){alert(a)})"/>
+            <br />
             <input type="radio" name="model" checked="checked" value="read">read
             <input type="radio" name="model" value="add">add
-		          	<input type="radio" name="model" value="write">write 
-		          	<br />
+            <input type="radio" name="model" value="write">write 
+            <br />
             <input type="button" value='获取目录' onclick="List.get();" />
+            <input type="button" value='获取目录2' onclick="List.get2();" />
             <input type="button" value='保存目录' onclick="List.write();" />
+            <input type="button" value='缓存目录' onclick="List.setLocal();" />
             <input type="button" value='保存书架' onclick="Shelf.set();" />
-            <input type="button" value='epub' onclick='alert(fso.writeZip(form_1.novel_name.value+".epub","zip"))' />
+            <br />
+            <input type="button" value='epub' onclick='zipFile.writeZip(form_1.novel_name.value)' />
             <input type=button value="打开" onclick="chrome.openFile(form_1.novel_name.value+'.epub')"/>
-	           	<input type=button value="删除" onclick="fso.delete('zip/OPS')"/>
+            <input type=button value="kindle" onclick="zipFile.sendToKindle(form_1.novel_name.value)"/>
+            <input type=button value="删除" onclick="var re=fso.fso.delete(form_1.novel_name.value+'/OPS');alert(re)"/>
+            <input type="button" value='书架' onclick="window.location.href='Shelf.html'" />
             <br />
             <input type="button" value='reload' onclick="document.location.reload();" />
             <input type="button" value='shiftDiv' onclick="shiftDiv(_reg);" />
@@ -98,25 +125,27 @@
                 章节序号:<input type="text" name="section_num"><br />
                 下章地址:<input type="text" name="next_url"><br />
             </div>
+            <a href="javascript:document.location.href='novel2.html'">小说2</a>
             <table id="table_3" onclick="Novel.get_local_history(event.srcElement);"></table>
             <textarea name="txt1" ></textarea>
         </form>
     </div>
-<!--1-->
+<!--1  调试-->
     <div>
         <form id="form_2">
             <input type="button" value="eval" onclick="eval(form_2.txt1.value);" />
-            <input type="button" value="eval_asp" onclick="eval_asp(form_2.txt1.value);" />
+            <input type="button" value="read" onclick="var arr=script1.value.split(',');for(var i=0;i<arr.length;i++){get(arr[i],function(txt){form_2.txt1.value+=txt;});}" />
             <input type="button" value="evalsql_asp" onclick="evalsql_asp(form_2.txt1.value);" />
-            <input type="button" value="重试" onclick="eval(fso.read('/下载/novel.js'));alert(true)" /><br />
+            <input type="button" value="加载script" onclick="var arr=script1.value.split(',');for(var i=0;i<arr.length;i++){get(arr[i],function(txt){eval(txt);alert(txt);});}" /><br />
+            <input type="text" id="script1" style="height:10px" />
             <textarea name="txt1" ></textarea>
-            <input type="button" value="clear" onclick="console.clear();" />
-            <textarea name="console1" ></textarea>
         </form>
     </div>
-<!--2-->
+<!--2  书架-->
     <div>
           <form id="form_3">
+              name:<input type="text" size=8 id="f3_name" />
+              <input type="button" value="搜索" onclick="funcs.search(f3_name.value);" />
               <input type="button" value='set' onclick="Shelf.set()" />  
               <input type="button" value='get' onclick="Shelf.get()" /> 
               <input type="button" value='检查更新' onclick="Shelf.update()" />	
@@ -124,21 +153,66 @@
               <table id="shelf_table" style="table-layout:fixed" onclick="Shelf.tableFun(event.srcElement);"></table>
           </form>
     </div>
+    <!--3 目录-->
     <div>
         <form id="form_4">
-        <input type="button" value='write' onclick="List.write()" />  
-        <input type="button" value='read' onclick="List.read()" /> 
-        <div style="height:95%;overflow-x:hidden;overflow-y:auto;">
-            <table id="list_table" onclick="alert(event.srcElement.parentNode.parentNode.rowIndex);"></table>
+            name:<input type="text" size=8 id="f4_name" />
+            url:<input type="text" size=14 id="f4_url" />
+            <br/>
+            new:<input type="text" size=14 id="f4_new">
+            count:<input type="text" size=4 id="f4_count">
+            <input type="number" min=0 max=1000 onchange="List.scroll(this.value)" />
+            <input type="button" value="换源" onclick="funcs.getsearch(f4_name.value);" />
+            <input type="button" value='更新' onclick="List.update(f4_url.value)" />  
+            
+        <div id=s1 style="height:95%;overflow-x:hidden;overflow-y:auto;">
+            <table id="list_table" onclick="List.tableFun(event.srcElement);"></table>
         </div>
         <div class="dropdown">
             <span>Mouse over me</span>
-            <div class="dropdown-content">
-                <p>Hello World!</p>
+            <div class="dropdown-content" onclick="if(event.srcElement.nodeName=='P'){alert(event.srcElement.innerHTML)}">
+                <p>Hello World1!</p>
+                <p>Hello World2!</p>
+                <p>Hello World3!</p>
+                <p>Hello World4!</p>
+                <p>Hello World5!</p>
+                <p>Hello World6!</p>
+                <p>Hello World7!</p>
+                <p>Hello World8!</p>
             </div>
         </div>
         </form>
     </div>
+<!--4控制台-->
+    <div>
+        <form id="form_5">
+            <input type="button" value="clear" onclick="console.clear();" />
+            <textarea name="console1" ></textarea>
+        </form>
+    </div>
+<!--5百度搜索-->
+    <div>
+        <form id="form_6">
+            <input type="text" id="f6_txt1" onchange="">
+            <input type="button" value="搜索" onclick="funcs.search(f6_txt1.value);" />
+            <input type="button" value="获取列表" onclick="funcs.getfilelist();" />
+            <input type="button" value="获取本地搜索结果" onclick="funcs.getsearch();" />
+            <!--书架-->
+            <div style="width:100%;height:50px;overflow-y:scroll;">
+              <table id="f6_table1" onclick="funcs.tfun1(event.srcElement);"></table>
+            </div>
+            
+            <!--搜索-->
+            <input type="text" id="f6_name" onchange="">
+            <input type="button" value="搜索" onclick="funcs.search(f6_name.value);" />
+            <input type="button" value="保存" onclick="funcs.savesearch();" />
+            <input type="button" value="重载" onclick="funcs.getsearch();" />
+            <div style="width:100%;height:50%;overflow-y:scroll;">
+              <table id="f6_table2" onclick="funcs.tfun2(event.srcElement);" ondblclick="funcs.tfun2_2(event.srcElement);"></table>
+            </div>
+        </form>
+    </div>    
+    
  <!--结束-->
 </div>
 <div class="alert">
@@ -153,30 +227,26 @@
 <script>
 console=function(){}
 console.prototype.clear=function(){
-    form_2.console1.innerHTML="";
+    form_5.console1.value="";
 }
 console.prototype.log=function(str){
-    form_2.console1.innerHTML+=str+"\n";
+    form_5.console1.value+=str+"\n";
 }
 console=new console();
 
 window.onload=function(){
   //get_js(["menu.js","novel.js","list.js","zipFile.js","Shelf.js"]);
-  menu_ini();
   List=new List();
   Shelf=new Shelf();
-  zipFile=new zipFile();
-  //Shelf.get();
+  
+  Shelf.get();
   //n.resize();
 }
 	
 window.onresize=function(){ 
    //n.resize();
 }
-window.onerror = function(sMessage, sUrl, sLine) {
-     alert("发生错误！\n" + sMessage + "\nURL:" + sUrl + "\nLine Number:" + sLine);
-     return true;
-}
+
 var _index=0;
 var myLi,myDiv;
 
@@ -272,6 +342,8 @@ evalsql_asp=function(txt){
   post(url,"eval="+txt,function(txt){
     alert(txt)
   });
+}
+t=function(a){
 }
 </script>
 </body>

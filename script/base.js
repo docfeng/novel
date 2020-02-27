@@ -1,18 +1,5 @@
 String.prototype.post=function(str,fun) {  
-  var xmlHttp=null; 
-  try { // Firefox, Opera 8.0+, Safari 
-   xmlHttp=new XMLHttpRequest();
-  }catch (e) { // Internet Explorer 
-    try { 
-    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
-    }catch (e) { 
-      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-      } 
-    } 
-  if (xmlHttp==null) { 
-      alert ("您的浏览器不支持AJAX！"); 
-       return; 
-  }
+  var xmlHttp=xmlhttp(); 
   xmlHttp.onreadystatechange=function(){
     if(xmlHttp.readyState==4) { 
      fun(xmlHttp.responseText)
@@ -21,10 +8,10 @@ String.prototype.post=function(str,fun) {
   xmlHttp.open("POST",this,true); 
   xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   xmlHttp.send(str); 
-  //xmlHttp=null;
-  }
+}
 
-String.prototype.get=function(fun) {  
+
+xmlhttp=function(){
   var xmlHttp=null; 
   try { // Firefox, Opera 8.0+, Safari 
    xmlHttp=new XMLHttpRequest();
@@ -39,37 +26,42 @@ String.prototype.get=function(fun) {
       alert ("您的浏览器不支持AJAX！"); 
        return; 
   }
-  xmlHttp.timeout=10000;
-  xmlHttp.onreadystatechange=function(){
-    if(xmlHttp.readyState==4) { 
-     fun(xmlHttp.responseText)
+  return xmlHttp;
+}
+
+gethtml= function(url){
+  return new Promise(function(resolve){
+    var xmlHttp=xmlhttp();
+    xmlHttp.timeout=20000;
+    xmlHttp.onreadystatechange=function(){
+      if(xmlHttp.readyState==4) { 
+        var re={html:xmlHttp.responseText,
+             url:xmlHttp.responseURL};
+             //alert(re.html)
+        resolve(re)
+      }
     }
-  }
-  xmlHttp.ontimeout = function(e) {
-    alert("close");
-    xmlHttp.abort();
-  };
-  xmlHttp.open("GET",this,true); 
-  xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  xmlHttp.send(); 
-  //xmlHttp=null;
-  }
+    xmlHttp.ontimeout = function(e) {
+      prompt(url,url);
+      var err=new Error()
+      xmlHttp.abort();
+      resolve("");
+      throw setError("ajax超时20s","url:"+url);
+      
+      
+    };
+    xmlHttp.open("GET",url,true); 
+    xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xmlHttp.send(); 
+  });
+}
+
+String.prototype.get=function(fun) { 
+  get(this,fun);
+}
   	
- post=function(path,str,fun) {  
-  var xmlHttp=null; 
-  try { // Firefox, Opera 8.0+, Safari 
-   xmlHttp=new XMLHttpRequest();
-  }catch (e) { // Internet Explorer 
-    try { 
-    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
-    }catch (e) { 
-      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-      } 
-    } 
-  if (xmlHttp==null) { 
-      alert ("您的浏览器不支持AJAX！"); 
-       return; 
-  }
+post=function(path,str,fun) {  
+  var xmlHttp=xmlhttp(); 
   xmlHttp.onreadystatechange=function(){
     if(xmlHttp.readyState==4) { 
      fun(xmlHttp.responseText)
@@ -78,47 +70,24 @@ String.prototype.get=function(fun) {
   xmlHttp.open("POST",path,true); 
   xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   xmlHttp.send(str); 
-  //xmlHttp=null;
-  }
+}
 
 get=function(path,fun,timeOutFun) {  
-  var xmlHttp=null; 
-  try { // Firefox, Opera 8.0+, Safari 
-   xmlHttp=new XMLHttpRequest();
-  }catch (e) { // Internet Explorer 
-    try { 
-    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
-    }catch (e) { 
-      xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-      } 
-    } 
-  if (xmlHttp==null) { 
-      alert ("您的浏览器不支持AJAX！"); 
-       return; 
-  }
-  xmlHttp.timeout=10000;
+  var xmlHttp=xmlhttp(); 
   xmlHttp.onreadystatechange=function(){
     if(xmlHttp.readyState==4) { 
-     fun(xmlHttp.responseText);
-     //xmlHttp=null;
+     fun(xmlHttp.responseText)
     }
   }
-  xmlHttp.ontimeout = function(e) {
-    if(timeOutFun){
-      timeOutFun();
-    }else{
-      alert("超时");
-    }
-    xmlHttp.abort();
-  };
   xmlHttp.open("GET",path,true); 
   xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   xmlHttp.send(); 
-  //xmlHttp=null;
-  }
+}
 
 String.prototype.getFullUrl=function(url1){
    var re="";
+   //alert(this)
+   //alert(url1)
    var url=url1.match(/(http[s]?:\/\/[^\/]*?)\//);
    var path=url1.match(/http[s]?:.*\//);
    if(url)
@@ -176,6 +145,7 @@ String.prototype.toNum=function(){
         switch(str){
             case "零":return 0;break;
             case "一":return 1;break;
+            case "两":return 2;break;
             case "二":return 2;break;
             case "三":return 3;break;
             case "四":return 4;break;
@@ -203,7 +173,9 @@ String.prototype.toNum=function(){
     }
     if(str.match("十")){
         var _str=str.split("十");
-        num=num+to_num(_str[0])*10;
+        var ten=to_num(_str[0]);
+        ten=ten==0?1:ten;
+        num=num+ten*10;
         str=_str[1];
     }
         num=num+to_num(str);
@@ -214,6 +186,7 @@ Array.prototype.add=function(i,arr){
     var a=this
     return a.slice(0,i).concat(arr,a.slice(i));
 }
+
 Array.prototype.del=function(i){
   var arr1=this.slice(0,i)
   var arr2=this.slice(i)
@@ -276,8 +249,81 @@ Minimum=function(a,b,c){
 	return a<b?(a<c?a:c):(b<c?b:c);
 }
 
+//获取自定义时间格式
+getDate=function(){
+  var date=new Date()
+  var _date=date.toLocaleDateString();
+  var hours=date.getHours();
+  var minute=date.getMinutes();
+  var second=date.getSeconds();
+  date=_date+" "+hours+":"+minute+":"+second;
+  return date;
+}
 
+//定义静态变量
+/* static=new Proxy({},{
+  get:function(oTarget, sKey){
+    var re=arguments.callee.caller[sKey];
+    return re;
+  },
+  set:function(oTarget, sKey, vValue){
+    arguments.callee.caller[sKey]=vValue;
+  } 
+}); */
+//动态加载js
+includejs=function(src,bool){
+	var bool=bool== null?true:bool;
+  if(bool){
+    var oHead = document.getElementsByTagName('HEAD').item(0);
+            var oScript= document.createElement("script");
+            oScript.type = "text/javascript";
+            oScript.src=src; 
+            oHead.appendChild( oScript);
+  }else{
+    var js=gettext(src);
+    eval(js);
+  } 
+}
+//动态加载css
+includecss=function(src){
+            var oHead = document.getElementsByTagName('HEAD').item(0);
+            var oLink= document.createElement("link");
+            oLink.type = "text/css";
+            oLink.rel = "stylesheet";
+            oLink.href=src; 
+            oHead.appendChild( oLink); 
+}
+        
+/*导入模块
+  var [c,b]=include("script/model1");
+*/
+include=function(url){
+  var str=gettext(url+".js");
+  return new Function(str)();
+}
+//获取网页源文本
+gettext= function(url){
+  var xmlHttp=xmlhttp(); 
+  var re=""
+  xmlHttp.onreadystatechange=function(){
+    if(xmlHttp.readyState==4) { 
+      re=xmlHttp.responseText;
+    }
+  }
+  xmlHttp.open("GET",url,false); 
+  xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  xmlHttp.send(); 
+  return re;
+}
 
+setError=function(name,message){
+  var err=new Error()
+  err.name=name;
+  err.message=message;
+  return err;
+}
 
-
-
+window.onerror = function(sMessage, sUrl, sLine) {
+     alert("发生错误！\n" + sMessage + "文件:" + sUrl + "\n 行号:" + sLine);
+     return true;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<meta http-equiv="Expires" content="0"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-control" content="no-cache"> 
+<meta http-equiv="Cache" content="no-cache">
+<meta name="full-screen" content="yes"/>
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>书架</title>
+<script src="script/jquery-1.8.0.js"></script>
+<script src="script/shift.js"></script>
+<script src="script/base.js"></script>
+<script src="script/menu.js"></script>
+<!-- <script src="novel.js"></script> -->
+<script src="script/list.js"></script>
+<script src="script/page.js"></script>
+<script src="script/zipFile.js"></script>
+<script src="script/Shelf.js"></script>
+<script src="script/search.js"></script>
+<script src="script/winObj.js"></script>
+<script src="fso_jsonp.js"></script>
+<!-- <script src="http://git.docfeng.top/novel.js"></script> -->
+<link rel="stylesheet" href="css/main.css" type="text/css"></link> 
+<link rel="stylesheet" href="css/test.css" type="text/css">
+
+<style type='text/css'>
+//小说
+/*#novel_menu{width:100%;
+	position:absolute; 
+	Bottom:0px;
+	display: none;
+} */	
+//table h3{font-size:10%;}
+
+#novel_view_body{
+	background: #666;
+      width:100%;
+      	height:572px;
+      	overflow:hidden;
+      	text-overflow:ellipsis;
+      	white-space:inherit;
+}
+#novel_view_body_content{
+	lineHeight:16px;
+}
+</style>
+<body>
+<div class="myhead" id="Mytitle" style="height:18px;"></div>
+<div class="menu fix" id="menu">
+    <ul data-index=0>
+        <li>调试eval</li>
+        <li>书架</li>
+        <li>目录
+          <ul>
+            <li>6</li>
+          </ul>
+        </li>
+    </ul>
+<!--1-->
+    <div>
+        <form id="form_2">
+            <input type="button" value='reload' onclick="document.location.reload();" />
+            <input type="button" value="eval" onclick="eval(form_2.txt1.value);" />
+            <input type="button" value="eval_asp" onclick="eval_asp(form_2.txt1.value);" />
+            <input type="button" value="evalsql_asp" onclick="evalsql_asp(form_2.txt1.value);" />
+            <input type="button" value="重试" onclick="eval(fso.read('/下载/novel.js'));alert(true)" /><br />
+            <textarea name="txt1" ></textarea>
+            <input type="button" value="clear" onclick="console.clear();" />
+            <textarea name="console1" ></textarea>
+        </form>
+    </div>
+<!--2-->
+    <div>
+          <form id="form_3">
+              <input type="button" value='返回' onclick="history.go(-1)" />
+              <input type="button" value='set' onclick="Shelf.set()" />  
+              <input type="button" value='get' onclick="Shelf.get()" /> 
+              <input type="button" value='检查更新' onclick="Shelf.update()" />	
+              <input type="button" value='删除' onclick="Shelf.tableFun=Shelf.del" />
+              <table id="shelf_table" style="table-layout:fixed" onclick="Shelf.tableFun(event.srcElement);"></table>
+          </form>
+    </div>
+    <div>
+        <form id="form_4">
+        <input type="button" value='write' onclick="List.write()" />  
+        <input type="button" value='read' onclick="List.read()" /> 
+        <div style="height:95%;overflow-x:hidden;overflow-y:auto;">
+            <table id="list_table" onclick="List.tableFun(event.srcElement);"></table>
+        </div>
+        <div class="dropdown">
+            <span>Mouse over me</span>
+            <div class="dropdown-content">
+                <p>Hello World!</p>
+            </div>
+        </div>
+        </form>
+    </div>
+ <!--结束-->
+</div>
+<div class="alert">
+  <div class="alert_head">
+    <div class="alert_title">标题</div>
+    <div class="alert_close">&#8855;</div>
+  </div>
+  <div class="alert_body">
+    显示
+  </div>
+</div>
+<script>
+console=function(){}
+console.prototype.clear=function(){
+    form_2.console1.innerHTML="";
+}
+console.prototype.log=function(str){
+    form_2.console1.innerHTML+=str+"\n";
+}
+console=new console();
+
+window.onload=function(){
+  //get_js(["menu.js","novel.js","list.js","zipFile.js","Shelf.js"]);
+  menu_ini();
+  List=new List();
+  Shelf=new Shelf();
+  zipFile=new zipFile();
+  //Shelf.get();
+  //n.resize();
+}
+	
+window.onresize=function(){ 
+   //n.resize();
+}
+window.onerror = function(sMessage, sUrl, sLine) {
+     alert("发生错误！\n" + sMessage + "\nURL:" + sUrl + "\nLine Number:" + sLine);
+     return true;
+}
+var _index=0;
+var myLi,myDiv;
+
+
+//window.addeventlistener("resize",function(){alert()},false);
+
+
+get_html=function(url,fun){
+	try{
+    get(url,fun);
+    }catch(e){alert(e);}
+}
+
+
+function show_novel_menu(){
+  var dis=novel_menu.style;
+  if(dis.display=="block")
+    {dis.display="none";}
+  else{dis.display="block";}
+}
+novel_cmd=function()
+{
+     var event = event || window.event;
+     var h=window.innerHeight;
+     var w=window.innerWidth;
+     var x=event.clientX;
+     var y=event.clientY;
+     if((x>1/2*w&&y>2/3*h)||(x>2/3*w&&y>1/2*h)){
+         n.go_page(1);
+     }
+     if((x<2/3*w&&y>1/2*h)||(x<1/2*w&&y>2/3*h)){
+        n.go_page(-1);
+     } 
+    if(x>w/3&&x<2/3*w&&y>h/3&&y<2/3*h){
+       //show_novel_menu();
+       shift(4);
+    }
+}
+
+get_js=function(arr,fun){	
+	  var index=0
+    arr.forEach(function(e){
+        post(e,"",function(a){
+            eval(a);
+            index++;
+            if(fun&&index==arr.length){
+                fun()
+            }
+        });
+     });
+}
+
+
+get_radio=function(obj){
+    for(var i=0;i<obj.length;i++){
+        if(obj[i].checked){
+            return obj[i].value;
+         }
+     }
+     return false;
+}
+ 
+shiftDiv=function(div){
+    if(_reg.style.display==""||_reg.style.display=="block")
+    {
+        div.style.display="none";
+    }else{
+        div.style.display="block";
+    } 
+}
+showData=function(data){
+    if(data.html){form_1.txt1.value=data.html}
+    if(data.name){form_1.novel_name.value=data.name}
+    	if(data.name_reg){form_1.name_reg.value=data.name_reg}
+    if(data.links){form_1.link_reg.value=data.links}
+}
+
+document.oncontextmenu=function() {
+    event.returnValue=false;
+    msg("当前设置不允许使用右键！");
+}
+
+
+eval_asp=function(txt){
+  var url="http://fujianyixue.host3v.vip/eval.asp";
+  post(url,"eval="+txt,function(txt){
+    alert(txt)
+  });
+}
+
+evalsql_asp=function(txt){
+  var url="http://fujianyixue.host3v.vip/evalsql.asp";
+  post(url,"eval="+txt,function(txt){
+    alert(txt)
+  });
+}
+</script>
+</body>
+</html>
